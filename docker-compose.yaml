@@ -23,6 +23,11 @@ services:
             TONIC_DISABLE_ACCOUNT_CREATION: ${TONIC_DISABLE_ACCOUNT_CREATION:-false}
         container_name: tonic_web_server
         restart: unless-stopped
+        logging:
+            driver: "json-file"
+            options:
+                max-size: "200m"
+                max-file: "2"
         mem_limit: 3072m
         ports:
             - 80:80
@@ -48,6 +53,11 @@ services:
             - 4433:443
         container_name: tonic_worker
         restart: unless-stopped
+        logging:
+            driver: "json-file"
+            options:
+                max-size: "200m"
+                max-file: "2"
         mem_limit: 10240m
         depends_on:
           - tonic_web_server
