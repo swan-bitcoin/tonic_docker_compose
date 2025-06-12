@@ -49,7 +49,7 @@ Before deploying this setup, you need to rename [.template.env](.template.env) t
 
 ### Version
 
-- `VERSION_TAG`: "latest" or a specific version tag. Tonic's tag convention is just the release number, e.g. "123". Release notes are available at [doc.tonic.ai](https://docs.tonic.ai/app/release-notes).
+- `VERSION_TAG`: "latest" or a specific version tag. Tonic's tag convention is just the release number. For example, "123". Release notes are available on the [Tonic website](https://www.tonic.ai/product-release-notes/structural).
 
 ### Tonic Administrators
 
@@ -71,11 +71,6 @@ Tonic Host Integration features for Docker Compose.  To enable these features, y
   - This value should be left as "DockerCompose"
 - `TONIC_HOST_INTEGRATION_ACL`
   - If you rename or other change the container in the `docker-compose.yaml` file, you will need to change this setting accordingly.  Otherwise it should be left as "http://tonic_docker_acl".
-
-### Log Collection
-Tonic never collects your sensitive data. Enabling this option securely and safely shares logs with Tonic's engineering team. We recommend that you enable this option. See: https://docs.tonic.ai/app/sharing-logs-with-tonic
-
-- `ENABLE_LOG_COLLECTION`: "false" (default) or "true"
 
 ### Consistency Seed
 This value is used to support [Consistency](https://docs.tonic.ai/app/concepts/consistency) functionality across data generations.
