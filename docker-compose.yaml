@@ -30,6 +30,7 @@ services:
             TONIC_DB_USERNAME: ${TONIC_DB_USERNAME}
             TONIC_DB_PASSWORD: ${TONIC_DB_PASSWORD}
             TONIC_DB_SSLMODE: ${TONIC_DB_SSLMODE:-require}
+            ENABLE_LOG_COLLECTION: ${ENABLE_LOG_COLLECTION:-false}
             # License should be configured by an admin within the Tonic UI. It can optionally be set here if there is no admin.
             # TONIC_LICENSE: ${TONIC_LICENSE}
             TONIC_STATISTICS_SEED: ${TONIC_STATISTICS_SEED}
@@ -60,6 +61,7 @@ services:
             TONIC_DB_USERNAME: ${TONIC_DB_USERNAME}
             TONIC_DB_PASSWORD: ${TONIC_DB_PASSWORD}
             TONIC_DB_SSLMODE: ${TONIC_DB_SSLMODE:-require}
+            ENABLE_LOG_COLLECTION: ${ENABLE_LOG_COLLECTION:-false}
             TONIC_STATISTICS_SEED: ${TONIC_STATISTICS_SEED}
             ENVIRONMENT_NAME: ${ENVIRONMENT_NAME}
             # should be the same as the tonic web server service name
@@ -89,6 +91,7 @@ services:
             - 7001:443
         environment:
             ENVIRONMENT_NAME: ${ENVIRONMENT_NAME}
+            ENABLE_LOG_COLLECTION: ${ENABLE_LOG_COLLECTION:-false}
             TONIC_DB_HOST: ${TONIC_DB_HOST}
             TONIC_DB_PORT: ${TONIC_DB_PORT}
             TONIC_DB_DATABASE: ${TONIC_DB_DATABASE}
@@ -126,6 +129,7 @@ services:
         mem_limit: 1024m
         environment:
             ENVIRONMENT_NAME: ${ENVIRONMENT_NAME}
+            ENABLE_LOG_COLLECTION: ${ENABLE_LOG_COLLECTION:-false}
         logging:
             driver: "json-file"
             options:
@@ -144,6 +148,7 @@ services:
     #     restart: unless-stopped
     #     mem_limit: 512m
     #     environment:
+    #         ENABLE_LOG_COLLECTION: ${ENABLE_LOG_COLLECTION:-false}
     #         ENVIRONMENT_NAME: ${ENVIRONMENT_NAME}
     #     volumes:
     #         - /var/run/docker.sock:/var/run/docker.sock
